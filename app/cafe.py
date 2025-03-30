@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date
 
 from app.errors import (NotVaccinatedError,
                         OutdatedVaccineError,
@@ -21,5 +21,5 @@ class Cafe:
         return f"Welcome to {self.name}"
 
     @staticmethod
-    def is_outdated(vaccine_expiration_date: datetime) -> bool:
+    def is_outdated(vaccine_expiration_date: date) -> bool:
         return vaccine_expiration_date < date.today()
